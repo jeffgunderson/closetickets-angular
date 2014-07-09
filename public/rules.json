@@ -1,0 +1,20 @@
+{
+    "rules": {
+        ".read": true,
+        "people": {
+            "$userid": {
+                ".write": "$userid == auth.id"
+            }
+        },
+        "users": {
+            "$userid": {
+                ".write": "$userid == auth.id"
+            }
+        },
+        "tickets": {
+            "$userid": {
+                ".write": "$userid == auth.id"
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+<component name="libraryTable">
+  <library name="Node.js v0.11.10-pre Core Modules" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="Node.js Core Modules" />
+      <option name="frameworkVersion" value="v0.11.10-pre" />
+      <sourceFilesUrls>
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_common.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_incoming.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_outgoing.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_server.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_linklist.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_duplex.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_passthrough.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_readable.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_debugger.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_agent.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_client.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/constants.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/console.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/dgram.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/crypto.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/domain.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/dns.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/freelist.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/events.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_writable.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_transform.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_tls_wrap.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_tls_legacy.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/buffer.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/assert.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/cluster.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/child_process.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/vm.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/zlib.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/tls.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/tty.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/url.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/util.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/os.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/net.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/punycode.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/path.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/http.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/fs.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/module.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/https.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/string_decoder.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/stream.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/timers.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/sys.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/readline.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/querystring.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/smalloc.js" />
+        <item url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/repl.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_common.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_incoming.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_outgoing.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_server.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_linklist.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_duplex.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_passthrough.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_readable.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_debugger.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_agent.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_http_client.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/constants.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/console.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/dgram.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/crypto.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/domain.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/dns.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/freelist.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/events.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_writable.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_stream_transform.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_tls_wrap.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/_tls_legacy.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/buffer.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/assert.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/cluster.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/child_process.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/vm.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/zlib.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/tls.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/tty.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/url.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/util.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/os.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/net.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/punycode.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/path.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/http.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/fs.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/module.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/https.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/string_decoder.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/stream.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/timers.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/sys.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/readline.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/querystring.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/smalloc.js" />
+      <root url="file://$USER_HOME$/Library/Caches/WebStorm6/extLibs/nodejs-v0.11.10-pre-src/core-modules-sources/repl.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

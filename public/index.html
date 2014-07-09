@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="/css/custom.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
+    <script src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+
+    <script type="text/javascript" src="/application/app.js"></script>
+    <script type="text/javascript" src="/application/index.controller.js"></script>
+    <script type="text/javascript" src="/application/auth/auth.factory.js"></script>
+    <script type="text/javascript" src="/application/geolocation/geolocation.factory.js"></script>
+    <script type="text/javascript" src="/application/user/user.controller.js"></script>
+    <script type="text/javascript" src="/application/user/user.directives.js"></script>
+    <script type="text/javascript" src="/application/listings/listings.factory.js"></script>
+    <script type="text/javascript" src="/application/listings/listings.controller.js"></script>
+    <script type="text/javascript" src="/application/listings/listings.directives.js"></script>
+
+</head>
+<body ng-app="ct">
+
+<!-- The header -->
+<header class="header">
+
+    <ul class="navigation float-left">
+        <li><a class="nav-item" data-toggle="sidebar"><i class="icon-list2 icon-big"></i></a></li>
+    </ul>
+
+    <div class="logo">
+        <img src="/img/logo-shield.png" alt="Closetickets logo shield">
+        <span class="company-name">Closetickets</span>
+    </div>
+
+    <div class="navigation float-right clearfix" ng-controller="User">
+
+        <div class="float-left" ng-hide="loggedIn"><a class="nav-item" ng-click="showSignupModal = true">Sign Up</a></div>
+        <div class="float-left" ng-hide="loggedIn"><a class="nav-item" ng-click="showLoginModal = true">Log In</a></div>
+        <div class="float-left" ng-show="loggedIn"><a class="nav-item"><img src="{{user.profileImage}}"> <span>{{user.displayName}}</span></a></div>
+        <div class="float-left" ng-show="loggedIn"><a class="nav-item" ng-click="logout()">Log Out</a></div>
+
+        <!-- Modals for Signup / Login -->
+        <div class="modal-wrapper slide-in" ng-show="showSignupModal" >
+            <div class="modal-tint" ng-click="showSignupModal = false"></div>
+            <div class="modal slide-in">
+                <div class="inner">
+                    <span>To help ensure the integrity and validity of our users, we require a social network login.</span>
+                    <br><br>
+                    <signup class="button button-blue button-block"><i class="icon-facebook2"></i> Sign Up with Facebook</signup>
+                    <br>
+                    <span>Already have an account?</span> <a class="blue" ng-click="showSignupModal = false; showLoginModal = true;">Click here</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-wrapper slide-in" ng-show="showLoginModal">
+            <div class="modal-tint" ng-click="showLoginModal = false"></div>
+            <div class="modal slide-in">
+                <div class="inner">
+                    <span>Login to your account</span>
+                    <br><br>
+                    <login class="button button-blue button-block"><i class="icon-facebook2"></i> Login with Facebook</login>
+                    <br>
+                    <span>Don't have an account yet?</span> <a class="blue" ng-click="showLoginModal = false; showSignupModal = true;">Click here</a>
+                </div>
+            </div>
+        </div>
+        <!-- end modals -->
+
+    </div>
+</header>
+
+<!-- The view -->
+<div ng-view></div>
+
+
+
+</body>
+</html>
