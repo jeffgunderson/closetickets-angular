@@ -3,19 +3,19 @@ app.controller('User', ['$scope','$timeout','$firebase', 'authFactory',
 
         $scope.auth = authFactory;
 
-        $scope.$watch( 'auth', function (newValue, oldValue) {
+        $scope.$watch( 'auth.user', function (newValue, oldValue) {
 
-            if( $scope.auth.user ) {
+            if ( $scope.auth.user ) {
 
                 $scope.showSignupModal = false;
                 $scope.showLoginModal = false;
 
-//                var userRef = new Firebase('https://closetickets.firebaseio.com/users/' + $scope.auth.user.id );
-//                $scope.fbUser = $firebase( userRef );
-//                $scope.fbUser.$bind( $scope, 'auth.user' );
+                var userRef = new Firebase('https://closetickets.firebaseio.com/users/' + $scope.auth.user.id );
+                $scope.fbUser = $firebase( userRef );
+                $scope.fbUser.$bind( $scope, 'auth.user' );
             }
 
-        }, true );
+        });
     }
 ]);
 
