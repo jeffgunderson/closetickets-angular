@@ -1,3 +1,3 @@
-app.controller('ctIndex', ['$scope','auth', function( $scope, auth ) {
+app.controller('ctIndex', ['$scope', function( $scope ) {
 
 }]);

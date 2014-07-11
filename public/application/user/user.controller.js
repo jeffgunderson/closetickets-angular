@@ -1,47 +1,18 @@
-app.controller('User', ['$scope','$timeout','$firebase', 'auth', function( $scope, $timeout, $firebase, auth ) {
+app.controller('User', ['$scope','$timeout','$firebase', 'authFactory',
+    function( $scope, $timeout, $firebase, authFactory ) {
 
-    $scope.loggedIn = false;
+        $scope.auth = authFactory;
 
-    $scope.$on( 'userLogin', function() {
+        $scope.$watch( 'auth', function (newValue, oldValue) {
 
-        $scope.showSignupModal = false;
-        $scope.showLoginModal = false;
-        $scope.loggedIn = true;
+            if( $scope.auth.user ) {
+                $scope.showSignupModal = $scope.showLoginModal = false;
 
-        $scope.user = auth.user;
-        $scope.user.profileImage = 'https://graph.facebook.com/' + auth.user.id + '/picture'; // can use third party data here in object instead.. "auth.user.thirdPartyUserData.picture.data.url"
+//                var userRef = new Firebase('https://closetickets.firebaseio.com/users/' + $scope.auth.user.id );
+//                $scope.fbUser = $firebase( userRef );
+//                $scope.fbUser.$bind( $scope, 'auth.user' );
+            }
 
-        var userRef = new Firebase('https://closetickets.firebaseio.com/users/' + auth.user.id );
-        $scope.fbUser = $firebase( userRef );
-        $scope.fbUser.$bind( $scope, 'user' );
-
-    });
-
-    $scope.$on( 'userLogout', function() {
-
-        $timeout(function() {
-            $scope.loggedIn = false;
-        });
-
-
-    });
-
-    $scope.signUp = function() {
-
-        auth.login();
-
-    };
-
-    $scope.login = function() {
-
-        auth.login();
-
-    };
-
-    $scope.logout = function() {
-
-        auth.logout();
-
+        }, true );
     }
-
-}]);
+]);

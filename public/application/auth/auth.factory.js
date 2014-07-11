@@ -1,43 +1,30 @@
-app.factory( 'auth', [ '$q', '$rootScope', function( $q, $rootScope ) {
+app.factory( 'authFactory', [
+    function() {
 
-    var auth = {};
-    var authUrl = new Firebase('https://closetickets.firebaseio.com');
+        var pub = {
 
-    auth.broadcastEvent = function( authEvent ) {
-        $rootScope.$broadcast( authEvent );
-    };
+            login: function() {
+                fbAuth.login('facebook', { rememberMe: true, scope: 'email,user_likes'} );
+            },
 
-    auth.getUser = function() {
-        return auth.user;
-    };
+            logout: function() {
+                fbAuth.logout();
+            },
 
-    auth.client = new FirebaseSimpleLogin( authUrl, function( error, user ) {
+            user: null
+        };
 
-        if ( error ) {
-            auth.user = null;
-            auth.broadcastEvent( 'loginError' );
-        }
+        var authUrl = new Firebase('https://closetickets.firebaseio.com');
 
-        else if ( user ) {
-            auth.user = user;
-            auth.broadcastEvent( 'userLogin' );
-        }
+        var fbAuth = new FirebaseSimpleLogin( authUrl, function( error, user ) {
+            if ( error )
+                pub.user = null;
+            else if ( user )
+                pub.user = angular.copy( user );
+            else
+                pub.user = null;
+        });
 
-        else {
-            auth.user = null;
-            auth.broadcastEvent( 'userLogout' );
-        }
-
-    });
-
-    auth.login = function() {
-        this.client.login('facebook', { rememberMe: true, scope: 'email,user_likes'} );
-    };
-
-    auth.logout = function() {
-        this.client.logout();
-    };
-
-    return auth;
-
-}]);
+        return pub;
+    }
+]);

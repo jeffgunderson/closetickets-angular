@@ -1,6 +1,8 @@
-app.factory('listingsService', ['$firebase', function( $firebase ) {
+app.factory('listingsService', ['$firebase',
+    function( $firebase ) {
 
-    var ref = new Firebase('https://closetickets.firebaseio.com/listings');
-    return $firebase( ref );
+        var ref = new Firebase('https://closetickets.firebaseio.com/listings');
+        return $firebase( ref );
 
-}]);
+    }
+]);
