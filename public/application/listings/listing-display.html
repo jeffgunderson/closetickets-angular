@@ -1,0 +1,17 @@
+
+<div  class="listing-display">
+    <div class="upper">
+        <div class="inner clearfix">
+            <img class="listing-user-image" ng-src="{{ auth.user.thirdPartyUserData.picture.data.url }}">
+            <span class="listing-posted-by">posted by</span><br>
+            <span class="listing-user-name">{{ auth.user.displayName }}</span>
+        </div>
+    </div>
+    <div class="body">
+        <div class="inner">
+            {{ name }}<br>
+            {{ price }}<br>
+            {{ description }}
+        </div>
+    </div>
+</div>
