@@ -1,0 +1,13 @@
+
+# Ignore WebStorm stuff.  From: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+
+## Directory-based project format
+# .idea/ BB - Commented out...
+# if you remove the above rule, at least ignore user-specific stuff:
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+# and these sensitive or high-churn files:
+**/.idea/dataSources.ids
+**/.idea/dataSources.xml
+**/.idea/sqlDataSources.xml
+**/.idea/dynamic.xml
