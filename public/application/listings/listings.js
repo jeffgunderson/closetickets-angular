@@ -1,12 +1,24 @@
-app.controller( 'Listings', [ '$scope', 'listingsService', '$firebase', 'geolocation','$timeout','authFactory',
-    function( $scope, listingsService, $firebase, geolocation, $timeout, authFactory ) {
+/**
+ * CONTROLLER
+ */
+
+app.controller( 'Listings', [ '$scope', 'listingsService', '$firebase', 'geolocation','$timeout','authFactory','listingsService',
+    function( $scope, listingsService, $firebase, geolocation, $timeout, authFactory, listingsService ) {
 
         $scope.auth = authFactory;
+
+        $scope.listing = {};
 
         $scope.saveListing = function() {
 
             if ( $scope.auth.user ) {
-                console.log('saving listing');
+
+                // add some needed user info
+                $scope.listing.userId = $scope.auth.userId;
+                $scope.listing.userName = $scope.auth.displayName;
+                $scope.listing.userImage =  $scope.auth.user.thirdPartyUserData.picture.data.url;
+
+                listingsService.$add( $scope.listing );
             }
             else{
                 console.log('no can do');
@@ -14,8 +26,15 @@ app.controller( 'Listings', [ '$scope', 'listingsService', '$firebase', 'geoloca
 
         };
 
+        $scope.listings = listingsService;
+        $scope.listings.$bind( $scope, 'listings' );
+
     }
 ]);
+
+/**
+ * SERVICES
+ */
 
 app.factory('listingsService', ['$firebase',
     function( $firebase ) {
@@ -25,6 +44,11 @@ app.factory('listingsService', ['$firebase',
 
     }
 ]);
+
+
+/**
+ * DIRECTIVES
+ */
 
 app.directive('createListing', function( authFactory ) {
     return {
@@ -42,14 +66,23 @@ app.directive('createListing', function( authFactory ) {
     }
 });
 
-app.directive('listingDisplay', function( authFactory ) {
+app.directive('findListing', function() {
+    return {
+        restrict: 'E',
+        controller: 'Listings',
+        templateUrl: '/application/listings/find-listing.html',
+        link: function( $scope ) {
+
+        }
+    }
+});
+
+app.directive('listingDisplay', function() {
     return {
         restrict: 'E',
         controller: 'Listings',
         templateUrl: '/application/listings/listing-display.html',
-        link: function ($scope, element) {
-
-
+        link: function ( $scope ) {
 
         }
     }

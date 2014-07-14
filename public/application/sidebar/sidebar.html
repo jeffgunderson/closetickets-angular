@@ -1,0 +1,17 @@
+<div class="sidebar" ng-init="showFind = true">
+
+    <div class="clearfix">
+        <a class="toggle-tab" ng-class="{ 'active' : showFind }" ng-click="showFind = true; showSell = false"><i class="icon-search"></i> Find</a>
+        <a class="toggle-tab" ng-class="{ 'active' : showSell }" ng-click="showSell = true; showFind = false" ng-show="auth.user"><i class="icon-ticket"></i> Sell</a>
+    </div>
+
+    <div ng-show="showFind">
+        <find-listing></find-listing>
+    </div>
+    <div ng-show="showSell">
+        <div class="inner">
+            <create-listing></create-listing>
+        </div>
+    </div>
+
+</div>

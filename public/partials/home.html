@@ -1,9 +1,21 @@
-<div class="sidebar">
-    <div class="inner">
-        <create-listing></create-listing>
-    </div>
+
+<menu>
+    <div class="off-canvas-menu"></div>
+    <div ng-show="showMenu" ng-click="showMenu = !showMenu" class="off-canvas-menu-cover"></div>
+</menu>
+
+<div class="page-wrapper" ng-class="{ 'menu-open' : showMenu }">
+
+    <ctheader></ctheader>
+
+    <ctsidebar></ctsidebar>
+
+    <listing-display></listing-display>
+
 </div>
 
 
-<listing-display></listing-display>
+
+
+
 

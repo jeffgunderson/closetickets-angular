@@ -3,10 +3,8 @@ app.directive('ctheader', function() {
         restrict: 'E',
         controller: 'ctIndex',
         templateUrl: '/application/header/header.html',
-        link: function( scope ){
-
-
+        link: function( $scope ){
 
         }
     }
-})
+});

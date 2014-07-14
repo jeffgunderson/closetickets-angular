@@ -1,0 +1,13 @@
+<div class="inner listing-search">
+    <input class="input-block" type="text" placeholder="filter-results" ng-model="searchText">
+</div>
+
+<div class="listing-results">
+    <div ng-repeat="listing in listings | orderByPriority | filter:searchText" class="listing-result">
+        <div class="inner">
+            <span class="name">{{listing.name}}</span>
+            <span><i class="icon-clock"></i> July 14th, 2014</span>
+            <span class="price green">{{listing.price}}</span>
+        </div>
+    </div>
+</div>
