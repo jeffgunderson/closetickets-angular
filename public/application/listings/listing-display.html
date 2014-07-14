@@ -1,5 +1,5 @@
 
-<div  class="listing-display">
+<div class="listing-display" ng-class="{ 'active': showSell }">
     <div class="upper">
         <div class="inner clearfix">
             <img class="listing-user-image" ng-src="{{ auth.user.thirdPartyUserData.picture.data.url }}">
@@ -9,9 +9,9 @@
     </div>
     <div class="body">
         <div class="inner">
-            {{ name }}<br>
-            {{ price }}<br>
-            {{ description }}
+            {{ listing.name }}<br>
+            {{ listing.price }}<br>
+            {{ listing.description }}
         </div>
     </div>
 </div>

@@ -1,9 +1,13 @@
-<form ng-show="user" ng-submit="saveListing()">
-    <br>
-    <span>Create your ticket listing..</span>
+<form ng-show="auth.user" ng-submit="saveListing()">
     <br><br>
-    <input class="input-block" type="text" ng-model="name" placeholder="{{namePlaceholder}}">
-    <input class="input-block" type="text" ng-model="price" placeholder="{{pricePlaceholder}}">
-    <textarea class="input-block" ng-model="description" placeholder={{descriptionPlaceholder}}></textarea>
+    <span><i class="icon-pencil"></i> Create your Ticket Listing</span>
+    <p>Fill out the following information to create your listing. It doesn't cost you a penny.</p>
+    <br>
+    <!--<input type="hidden" ng-model="listing.userId" ng-init="listing.userId = auth.user.id">-->
+    <!--<input type="hidden" ng-model="listing.userName" ng-init="listing.userName = auth.user.displayName">-->
+    <!--<input type="hidden" ng-model="listing.userImage" ng-init="listing.userImage = auth.user.thirdPartyUserData.picture.data.url">-->
+    <input class="input-block" type="text" ng-model="listing.name" placeholder="{{namePlaceholder}}">
+    <input class="input-block" type="text" ng-model="listing.price" placeholder="{{pricePlaceholder}}">
+    <textarea class="input-block" ng-model="listing.description" placeholder={{descriptionPlaceholder}}></textarea>
     <button class="button button-medium button-blue">Create Listing</button>
 </form>
