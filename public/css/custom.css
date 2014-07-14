@@ -58,7 +58,7 @@ body{
     min-height:100%;
     font-family: 'Proxima Nova', 'Proxima Nova Web', 'helvetica neue', helvetica, arial, sans-serif;
     background:#eee;
-    box-shadow:0 1px 12px rgba(0,0,0,0.6);
+    overflow:hidden;
 }
 *, *:before, *:after {
     -moz-box-sizing: border-box;
@@ -81,10 +81,6 @@ a{
 /*------------------------------------------------------------
                     COMMON
 -------------------------------------------------------------*/
-.page-wrapper{
-    max-width:1000px;
-    margin:0 auto;
-}
 .inner{
     padding: 0 15px;
 }
@@ -131,6 +127,59 @@ a{
 .text-small{
     font-size:14px;
 }
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+
+
+/*------------------------------------------------------------
+                    OFF CANVAS MENU
+-------------------------------------------------------------*/
+menu{
+    margin:0;
+}
+.page-wrapper{
+    /* TODO new way instead of absolute */
+    position:absolute;
+    z-index:5;
+    height:100%;
+    width:100%;
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.page-wrapper.menu-open{
+    margin-left:300px;
+}
+.off-canvas-menu{
+    padding:0;
+    margin:0;
+    z-index:4;
+    position:fixed;
+    left:0;
+    width:300px;
+    background:#444;
+    height:100%;
+}
+.off-canvas-menu-cover{
+    position:fixed;
+    z-index:6;
+    left:300px;
+    top:0;
+    right:0;
+    height:100%;
+}
+
 
 
 /*------------------------------------------------------------
@@ -139,6 +188,7 @@ a{
 .header{
     position:absolute;
     top:0;
+    left:0;
     width:100%;
     z-index:5;
     color: #777;
@@ -261,8 +311,84 @@ a{
     z-index:4;
     overflow:auto;
 }
+.sidebar .toggle-tab {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    background: #ccc;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+.sidebar .toggle-tab.active {
+    background: #fafafa;
+    color: #666;
+}
 
 
+
+/*------------------------------------------------------------
+                    LISTING RESULTS IN SIDEBAR
+-------------------------------------------------------------*/
+.listing-search{
+    margin:20px auto;
+    position:relative;
+}
+.listing-result{
+    padding:14px 0;
+    background:white;
+    border-bottom:1px solid #ddd;
+}
+.listing-result:first-child{
+    border-top:1px solid #ddd;
+}
+.listing-result span{
+    display:block;
+    padding:2px 0;
+}
+.listing-result .name{
+    font-weight:bold;
+    color:#000;
+}
+
+
+/*------------------------------------------------------------
+                    LISTING DISPLAY
+-------------------------------------------------------------*/
+.listing-display{
+    position:absolute;
+    bottom:0;
+    right:-300px;
+    opacity:0;
+    width:300px;
+    height:400px;
+    background:white;
+    box-shadow:0 1px 3px rgba(0,0,0,0.3);
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.listing-display.active{
+    right:0;
+    opacity:1;
+}
+.listing-display .upper{
+    padding:10px 0;
+    background:#fafafa;
+    border-bottom:1px solid #eee;
+}
+.listing-user-image{
+    float:left;
+    border-radius: 1000px;
+    width: 40px;
+    margin-right: 5px;
+    border: 2px solid #eee;
+}
+.listing-posted-by{
+    font-size:11px;
+    color:#aaa;
+}
 
 
 /*------------------------------------------------------------
