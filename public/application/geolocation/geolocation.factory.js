@@ -6,11 +6,9 @@ app.factory('geolocation', [ '$rootScope', '$q', function( $rootScope, $q ) {
 
         if ( navigator.geolocation ) {
 
-            navigator.geolocation.getCurrentPosition( function( location ) {
+            navigator.geolocation.getCurrentPosition( function( coords ) {
 
-                $rootScope.geolocation = location;
-                $rootScope.$broadcast('geolocationSuccess');
-                console.log( location );
+                location.coordinates = coords;
 
             });
 
@@ -18,8 +16,8 @@ app.factory('geolocation', [ '$rootScope', '$q', function( $rootScope, $q ) {
 
         else{
 
-            $rootScope.geolocation = null;
-            $rootScope.$broadcast('geolocationError');
+            // TODO: another solution
+            location.coordinates = null;
 
         }
 
