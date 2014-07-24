@@ -1,13 +1,26 @@
-<form ng-show="auth.user" ng-submit="saveListing()">
-    <br><br>
-    <span><i class="icon-pencil"></i> Create your Ticket Listing</span>
-    <p>Fill out the following information to create your listing. It doesn't cost you a penny.</p>
-    <br>
-    <!--<input type="hidden" ng-model="listing.userId" ng-init="listing.userId = auth.user.id">-->
-    <!--<input type="hidden" ng-model="listing.userName" ng-init="listing.userName = auth.user.displayName">-->
-    <!--<input type="hidden" ng-model="listing.userImage" ng-init="listing.userImage = auth.user.thirdPartyUserData.picture.data.url">-->
-    <input class="input-block" type="text" ng-model="listing.name" placeholder="{{namePlaceholder}}">
-    <input class="input-block" type="text" ng-model="listing.price" placeholder="{{pricePlaceholder}}">
-    <textarea class="input-block" ng-model="listing.description" placeholder={{descriptionPlaceholder}}></textarea>
-    <button class="button button-medium button-blue">Create Listing</button>
-</form>
+
+<div class="listing-display" ng-class="{ 'active': showSell }">
+    <div class="upper">
+        <div class="inner clearfix">
+            <img class="listing-user-image" ng-src="{{ auth.user.thirdPartyUserData.picture.data.url }}">
+            <span class="listing-posted-by">posted by</span><br>
+            <span class="listing-user-name">{{ auth.user.displayName }}</span>
+        </div>
+    </div>
+    <div class="body">
+        <div class="inner centered">
+            <span class="listing-name"><input  ng-model="listing.name" type="text" value="Enter a band name" placeholder="Enter a band name"></span><br>
+            <span class="listing-price"><input number-only ng-model="listing.price" type="text" placeholder="$0.00"></span><br><br>
+            <span class="listing-date clearfix"><input ng-model="listing.date" date-picker type="text" placeholder="Date"> @ <input ng-model="listing.time" time-picker type="text" placeholder="time"></span><br>
+            <p class="listing-description"><textarea rows="5" ng-model="listing.description" maxlength="130" placeholder="Enter a description"></textarea></p>
+        </div>
+    </div>
+    <div class="lower">
+        <div class="inner">
+            <i class="icon-target"></i>
+            <a class="button button-small" ng-click="cancelListing()">Cancel</a>
+            <a class="button button-green button-small" ng-click="createListing()">Create Listing</a>
+        </div>
+
+    </div>
+</div>

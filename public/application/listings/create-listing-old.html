@@ -1,0 +1,18 @@
+<div class="inner">
+    <form ng-showw="auth.user" ng-submit="saveListing()">
+        <br><br>
+        <span><i class="icon-pencil"></i> Create your Ticket Listing</span>
+        <p>Fill out the following information to create your listing. It doesn't cost you a penny.</p>
+        <br>
+
+        <input class="input-block" type="text" ng-model="listing.name" placeholder="{{namePlaceholder}}">
+        <input class="input-block" type="text" ng-model="listing.price" placeholder="{{pricePlaceholder}}">
+        <input class="input-block search-date" type="text" ng-model="listing.date" date-picker placeholder="Choose a Date">
+        <input class="input-block" type="text" ng-model="listing.time" placeholder="Chose a time" time-picker>
+        <!--<input type="text" ng-focus="open($event)" class="input-block" datepicker-popup="{{format}}" ng-model="searchDate" is-open="opened" min-date="minDate" datepicker-options="dateOptions" close-text="Close" />-->
+        <textarea class="input-block" ng-model="listing.description" placeholder={{descriptionPlaceholder}}></textarea>
+
+        <button class="button button-medium button-blue">Create Listing</button>
+
+    </form>
+</div>

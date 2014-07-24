@@ -8,10 +8,11 @@
         </div>
     </div>
     <div class="body">
-        <div class="inner">
-            {{ listing.name }}<br>
-            {{ listing.price }}<br>
-            {{ listing.description }}
+        <div class="inner centered">
+            <span class="listing-name">{{ listing.name }}</span><br>
+            <span ng-show="listing.price" class="listing-price">{{ listing.price }}</span><br><br>
+            <span ng-show="listing.date" class="listing-date">{{ listing.date }} @ {{listing.time}}</span><br>
+            <p class="listing-description">{{ listing.description }}</p>
         </div>
     </div>
 </div>
