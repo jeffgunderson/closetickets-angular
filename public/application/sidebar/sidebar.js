@@ -9,4 +9,4 @@ app.directive('ctsidebar', function() {
         }
     }
 
-})
+});
