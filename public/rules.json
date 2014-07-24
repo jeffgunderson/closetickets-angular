@@ -1,7 +1,26 @@
 {
     "rules": {
         ".read": true,
+        ".write": true,
+        "people": {
+            "$userid": {
+                ".write": "$userid == auth.id",
+                "inbox": {
+                    ".read" : "$userid == auth.id",
+                    ".write": "auth != null"
+                },
+                "outbox": {
+                    ".read" : "$userid == auth.id",
+                    ".write" : "$userid == auth.id"
+                }
+            }
+        },
         "users": {
+            "$userid": {
+                ".write": "$userid == auth.id"
+            }
+        },
+        "tickets": {
             "$userid": {
                 ".write": "$userid == auth.id"
             }
