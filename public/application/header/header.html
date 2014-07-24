@@ -9,40 +9,47 @@
         <span class="company-name">Closetickets</span>
     </div>
 
-    <div class="navigation float-right clearfix" ng-controller="User">
+    <div class="navigation float-right clearfix">
 
-        <div class="float-left" ng-hide="auth.user"><a class="nav-item" ng-click="showSignupModal = true">Sign Up</a></div>
-        <div class="float-left" ng-hide="auth.user"><a class="nav-item" ng-click="showLoginModal = true">Log In</a></div>
-        <div class="float-left" ng-show="auth.user"><a class="nav-item"><img ng-src="{{auth.user.thirdPartyUserData.picture.data.url}}"> <span>{{auth.user.displayName}}</span></a></div>
-        <div class="float-left" ng-show="auth.user"><a class="nav-item" ng-click="auth.logout()">Log Out</a></div>
+        <div class="float-left"><a class="nav-item" ng-show="auth.user" ng-click="showSell = true"><i class="icon-ticket"></i> Sell a Ticket</a></div>
+        <!--<div class="float-left"><a class="nav-item" ng-click="showSell = true"><i class="icon-ticket"></i> Sell a Ticket</a></div>-->
 
-        <!-- Modals for Signup / Login -->
-        <div class="modal-wrapper slide-in" ng-show="showSignupModal" >
-            <div class="modal-tint" ng-click="showSignupModal = false"></div>
-            <div class="modal slide-in">
-                <div class="inner">
-                    <span>To help ensure the integrity and validity of our users, we require a social network login.</span>
-                    <br><br>
-                    <button class="button button-blue button-block" ng-click="auth.login()"><i class="icon-facebook2"></i> Sign Up with Facebook</button>
-                    <br>
-                    <span>Already have an account?</span> <a class="blue" ng-click="showSignupModal = false; showLoginModal = true;">Click here</a>
+        <div class="float-left" ng-controller="User">
+            <div class="float-left" ng-hide="auth.user"><a class="nav-item" ng-click="showSignupModal = true">Sign Up</a></div>
+            <div class="float-left" ng-hide="auth.user"><a class="nav-item" ng-click="showLoginModal = true">Log In</a></div>
+            <div class="float-left" ng-show="auth.user"><a class="nav-item"><img ng-src="{{auth.user.thirdPartyUserData.picture.data.url}}"> <span>{{auth.user.displayName}}</span></a></div>
+
+            <!--<div class="float-left" ng-show="auth.user"><a class="nav-item" ng-click="auth.logout()">Log Out</a></div>-->
+
+            <!-- Modals for Signup / Login -->
+            <div class="modal-wrapper slide-in" ng-show="showSignupModal" >
+                <div class="modal-tint" ng-click="showSignupModal = false"></div>
+                <div class="modal slide-in">
+                    <div class="inner">
+                        <span>To help ensure the integrity and validity of our users, we require a social network login.</span>
+                        <br><br>
+                        <button class="button button-blue button-block" ng-click="auth.login()"><i class="icon-facebook2"></i> Sign Up with Facebook</button>
+                        <br>
+                        <span>Already have an account?</span> <a class="blue" ng-click="showSignupModal = false; showLoginModal = true;">Click here</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal-wrapper slide-in" ng-show="showLoginModal">
-            <div class="modal-tint" ng-click="showLoginModal = false"></div>
-            <div class="modal slide-in">
-                <div class="inner">
-                    <span>Login to your account</span>
-                    <br><br>
-                    <button class="button button-blue button-block" ng-click="auth.login()"><i class="icon-facebook2"></i> Login with Facebook</button>
-                    <br>
-                    <span>Don't have an account yet?</span> <a class="blue" ng-click="showLoginModal = false; showSignupModal = true;">Click here</a>
+            <div class="modal-wrapper slide-in" ng-show="showLoginModal">
+                <div class="modal-tint" ng-click="showLoginModal = false"></div>
+                <div class="modal slide-in">
+                    <div class="inner">
+                        <span>Login to your account</span>
+                        <br><br>
+                        <button class="button button-blue button-block" ng-click="auth.login()"><i class="icon-facebook2"></i> Login with Facebook</button>
+                        <br>
+                        <span>Don't have an account yet?</span> <a class="blue" ng-click="showLoginModal = false; showSignupModal = true;">Click here</a>
+                    </div>
                 </div>
             </div>
+            <!-- end modals -->
+
         </div>
-        <!-- end modals -->
 
     </div>
 </header>
