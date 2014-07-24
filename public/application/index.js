@@ -1,4 +1,7 @@
-app.controller('ctIndex', ['$scope', function( $scope ) {
+app.controller('ctIndex', ['$scope','authFactory', function( $scope, authFactory ) {
+
+    // init auth
+    $scope.auth = authFactory;
 
 }]);
 
