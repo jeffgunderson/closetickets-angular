@@ -1,18 +1,23 @@
-
-<div class="listing-display" ng-class="{ 'active': showSell }">
+<div class="sidepop listing-display" ng-class="{ 'active': activeListing }">
     <div class="upper">
         <div class="inner clearfix">
-            <img class="listing-user-image" ng-src="{{ auth.user.thirdPartyUserData.picture.data.url }}">
+            <img class="listing-user-image" ng-src="{{ activeListing.userImage }}">
             <span class="listing-posted-by">posted by</span><br>
-            <span class="listing-user-name">{{ auth.user.displayName }}</span>
+            <span class="listing-user-name">{{ activeListing.userName }}</span>
         </div>
     </div>
     <div class="body">
         <div class="inner centered">
-            <span class="listing-name">{{ listing.name }}</span><br>
-            <span ng-show="listing.price" class="listing-price">{{ listing.price }}</span><br><br>
-            <span ng-show="listing.date" class="listing-date">{{ listing.date }} @ {{listing.time}}</span><br>
-            <p class="listing-description">{{ listing.description }}</p>
+            <span class="listing-name">{{ activeListing.name }}</span><br>
+            <span class="listing-price">{{ activeListing.price | currency }}</span><br><br>
+            <span class="listing-date">{{ activeListing.date }} @ {{ activeListing.time }}</span><br>
+            <p class="listing-description">{{ activeListing.description }}</p>
+        </div>
+    </div>
+    <div class="lower">
+        <div class="inner">
+            <a class="button button-small" ng-click="closeListing()">Close</a>
+            <a class="button button-green button-small" ng-click="messageUser( activeListing.userId )">Message User</a>
         </div>
     </div>
 </div>

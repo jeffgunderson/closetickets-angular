@@ -3,10 +3,10 @@
 </div>
 
 <div class="listing-results">
-    <div ng-model="listing.$priority" ng-repeat="listing in listings | orderByPriority | reverse | filter: searchText" class="listing-result">
+    <div ng-repeat="listing in listings | orderByPriority | reverse | filter: searchText" ng-click="displayListing( listing )" class="listing-result">
         <div class="inner">
-            <div class="clearfix"><span class="name float-left">{{listing.name}}</span><span class="price float-right">${{listing.price}}</span></div>
-            <span>{{date}}</span>
+            <div class="clearfix"><span class="name float-left">{{listing.name}}</span><span class="price float-right">{{listing.price | currency}}</span></div>
+            <span>{{listing.date}}</span>
         </div>
     </div>
 </div>
