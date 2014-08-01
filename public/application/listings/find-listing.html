@@ -3,7 +3,7 @@
 </div>
 
 <div class="listing-results">
-    <div ng-repeat="listing in listings | orderByPriority | reverse | filter: searchText" ng-click="displayListing( listing )" class="listing-result">
+    <div ng-repeat="listing in listings | reverse | filter: searchText" ng-click="displayListing( listing )" class="listing-result">
         <div class="inner">
             <div class="clearfix"><span class="name float-left">{{listing.name}}</span><span class="price float-right">{{listing.price | currency}}</span></div>
             <span>{{listing.date}}</span>

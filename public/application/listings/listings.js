@@ -11,7 +11,7 @@ app.factory('listingsService', ['$firebase','$timeout',
         var public = {
 
             listings: function() {
-                return $firebase( fbRef );
+                return $firebase( fbRef ).$asArray();
             },
 
             activeListing: null
@@ -35,7 +35,6 @@ app.directive('findListing', ['listingsService', function( listingsService ) {
         link: function( $scope ) {
 
             $scope.listings = listingsService.listings();
-            $scope.listings.$bind( $scope, 'listings' );
 
             $scope.displayListing = function( listing ) {
 
@@ -47,7 +46,7 @@ app.directive('findListing', ['listingsService', function( listingsService ) {
     }
 }]);
 
-app.directive('listing', [ 'listingsService' , function( listingsService ) {
+app.directive('listing', [ 'listingsService', 'messagingService' , function( listingsService, messagingService ) {
     return {
         restrict: 'E',
         replace: true,
@@ -67,7 +66,8 @@ app.directive('listing', [ 'listingsService' , function( listingsService ) {
             }
 
             $scope.messageUser = function( userId ) {
-
+                listingsService.activeListing = null;
+                messagingService.initMessage( userId );
             }
 
         }
@@ -75,6 +75,7 @@ app.directive('listing', [ 'listingsService' , function( listingsService ) {
 }]);
 
 
+// TODO: get rid of showSell
 app.directive('createListing', [ 'listingsService','authFactory', function( listingsService, authFactory ) {
     return {
         restrict: 'E',
