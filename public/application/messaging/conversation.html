@@ -1,0 +1,18 @@
+<div class="sidepop" ng-class="{ 'active': messagingService.activeConversation }">
+    <div class="upper">
+        <div class="inner clearfix">
+            <span>Messages</span>
+        </div>
+    </div>
+    <div class="body">
+        <div ng-repeat="conversation in messagingService.messageModel ">{{ conversation.message }}</div>
+    </div>
+    <div class="lower">
+        <div class="inner">
+            <form ng-submit="sendMessage()">
+                <input ng-model="messageText" type="text" class="input-block">
+            </form>
+        </div>
+
+    </div>
+</div>
