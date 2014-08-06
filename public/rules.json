@@ -1,8 +1,8 @@
 {
     "rules": {
         ".read": true,
-        ".write": true,
-        "people": {
+        ".write": "auth.id != null",
+        "users": {
             "$userid": {
                 ".write": "$userid == auth.id",
                 "inbox": {
@@ -15,15 +15,15 @@
                 }
             }
         },
-        "users": {
+        "messages": {
             "$userid": {
-                ".write": "$userid == auth.id"
+                ".read": "$userid == auth.id",
+                ".write": "auth != null"
             }
         },
-        "tickets": {
-            "$userid": {
-                ".write": "$userid == auth.id"
-            }
+        "listings": {
+            ".read": true,
+            ".write": "auth.id != null"
         }
     }
 }
