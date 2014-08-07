@@ -1,10 +1,16 @@
-<div class="sidepop" ng-class="{ 'active': showMessaging }">
+<div class="sidepop" ng-class="{ 'active': modal.modalShown == 'conversations' }">
     <div class="upper">
         <div class="inner clearfix">
             <span>Messages</span>
+            <i class="icon-cross float-right" ng-click="modal.hideModals()"></i>
         </div>
     </div>
-    <div class="body">
-        ng-repeat over messages
+    <div class="body conversations">
+        <div class="conversation" ng-repeat="message in messagingService.messageModel | messageList: auth.user.id">
+            <div ng-click="openConversation( message.from )">
+                <img ng-src="{{ message.profileImage }}">
+                <span>{{ message.displayName }}</span>
+            </div>
+        </div>
     </div>
 </div>

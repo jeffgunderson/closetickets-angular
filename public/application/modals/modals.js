@@ -26,8 +26,6 @@ app.factory('modalService', [ '$timeout', function( $timeout ) {
             pub.modalShown = null;
         }
 
-
-
     }
 
     return pub;

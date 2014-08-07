@@ -1,13 +1,14 @@
 
 
-app.factory('messagingService', [ '$timeout', '$firebase', 'authFactory',
+app.factory( 'messagingService', [ '$timeout', '$firebase', 'authFactory',
     function( $timeout, $firebase, authFactory ) {
 
         var auth = authFactory;
         var messagesRef = new Firebase('https://closetickets.firebaseio.com/messages/');
 
-        var public = {
+        var pub = {
 
+            // TODO: get rid of message model and change loadMessages to messages
             activeConversation: null,
             messageModel: [],
 
@@ -20,52 +21,53 @@ app.factory('messagingService', [ '$timeout', '$firebase', 'authFactory',
 
             },
 
-            loadMessages: function( userId ) {
-
-                messagesRef.child( auth.user.id )
-                    .on('value', function ( snapshot ) {
-
-                        // TODO: create message Model here
-
-                        $timeout(function() {
-                            public.messageModel = snapshot.val();
-                        });
-
-                    }, function ( error ) {
-                        console.log( error.code );
-                    }
-                );
-
+            loadMessages: function() {
+                pub.messageModel = $firebase( messagesRef.child( auth.user.id ) ).$asArray();
             },
 
             initMessage: function( userId ) {
 
-                public.activeConversation = {};
-                public.activeConversation.recipientId = userId;
-                public.loadMessages( userId );
+                pub.activeConversation = {};
+                pub.activeConversation.recipientId = userId;
+                pub.loadMessages();
 
             }
 
         };
 
-        return public;
+        return pub;
 
     }
 ]);
 
 
-app.directive('messages', ['messagingService', function( messagingService ) {
+app.directive( 'messages', [ 'messagingService', 'authFactory', 'modalService', function( messagingService, authFactory, modalService ) {
     return{
         restrict: 'E',
-        templateUrl: '/application/messaging/conversations',
+        templateUrl: '/application/messaging/conversations.html',
+        scope: {
+            showMessaging: '='
+        },
         link: function( $scope, element, attrs ) {
+
+            // attach services to scope
+            $scope.messagingService = messagingService;
+            $scope.auth = authFactory;
+            $scope.modal = modalService;
+
+            $scope.openConversation = function( userId ) {
+
+                messagingService.initMessage( userId );
+                $scope.modal.showMessage();
+
+            };
 
         }
     }
 }]);
 
 
-app.directive('conversation', [ 'messagingService', 'authFactory', function( messagingService, authFactory ) {
+app.directive( 'conversation', [ 'messagingService', 'authFactory', 'modalService', function( messagingService, authFactory, modalService ) {
     return{
         restrict: "E",
         templateUrl: "/application/messaging/conversation.html",
@@ -74,8 +76,7 @@ app.directive('conversation', [ 'messagingService', 'authFactory', function( mes
             // attach services to scope
             $scope.messagingService = messagingService;
             $scope.auth = authFactory;
-
-            // TODO: bind messages for this user to messages model
+            $scope.modal = modalService;
 
             $scope.sendMessage = function() {
 
@@ -83,10 +84,22 @@ app.directive('conversation', [ 'messagingService', 'authFactory', function( mes
                 messagingService.sendMessage( {
                     to: messagingService.activeConversation.recipientId,
                     from: $scope.auth.user.id,
+                    displayName: $scope.auth.user.displayName,
                     profileImage: $scope.auth.user.thirdPartyUserData.picture.data.url,
                     message: $scope.messageText,
                     messageDate: new Date()
                 } );
+
+                // clear the message
+                $scope.messageText = '';
+
+            }
+
+            $scope.closeMessage = function() {
+
+                messagingService.activeConversation = null;
+                $scope.modal.hideModals();
+                $scope.modal.showConversations();
 
             }
 
@@ -94,3 +107,47 @@ app.directive('conversation', [ 'messagingService', 'authFactory', function( mes
     }
 }]);
 
+
+
+app.filter( 'filterMessagesByUser', function () {
+    return function ( messages, userId ) {
+
+        var filteredMessages = [];
+
+        for ( var i = 0; i < messages.length; i++ ) {
+
+            if ( messages[i].to == userId || messages[i].from == userId ) {
+                filteredMessages.push( messages[i] );
+            }
+
+        }
+
+        return filteredMessages;
+    };
+});
+
+
+
+app.filter('messageList', function() {
+    return function( messages, userId ) {
+
+        var userIndex = {};
+        var messageList = [];
+
+        for ( var i = 0; i < messages.length; i++ ) {
+
+            var message = messages[i];
+
+            if ( message.from != userId && !userIndex[message.from] ) {
+
+                userIndex[ message.from ] = true;
+                messageList.push( message );
+
+            }
+
+        }
+
+        return messageList;
+
+    }
+})
